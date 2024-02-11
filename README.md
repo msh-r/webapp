@@ -1,10 +1,7 @@
 This is a sample Web Application to use during Continuous Integration demos.
 
 #Build Instruction
-
-
-
-#Trying the webhook
+#trying the webhook-used by socketxp
 
 ```
 mvn3 clean package
