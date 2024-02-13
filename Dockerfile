@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN sudo apt install java -y
+RUN sudo apt-get install java -y
 RUN mkdir /home/ubuntu/tomcat
 WORKDIR /home/ubuntu/tomcat
 ADD https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz.asc .
