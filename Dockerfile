@@ -22,7 +22,7 @@ RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-
 
 # Expose default tomcat port
 EXPOSE 8080
-
+COPY ./WebApp.war /usr/local/tomcat/webapps
 # Start tomcat
 CMD ["catalina.sh", "run"]
 
