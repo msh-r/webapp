@@ -1,6 +1,10 @@
+# Use Ubuntu 20.04 as base image
+FROM ubuntu:20.04
+
+# Maintainer information
+LABEL maintainer="hramim389@gmail.com"
 
 # Install prerequisites
-FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y openjdk-11-jre-headless && \
     apt-get clean
