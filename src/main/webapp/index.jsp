@@ -1,4 +1,3 @@
-<! -- Demo Web Project-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
