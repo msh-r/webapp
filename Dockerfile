@@ -10,4 +10,4 @@ RUN tar -xzf apache-tomcat-9.0.85.tar.gz -C /opt/tomcat --strip-components=1
 #RUN mv apache-tomcat-9.0.85/* /opt/tomcat
 EXPOSE 8090
 COPY ./WebApp.war /opt/tomcat
-CMD ["/home/ubuntu/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
