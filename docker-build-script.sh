@@ -14,7 +14,6 @@ sudo -u ubuntu ssh -i /home/ubuntu/.ssh/id_rsa $REMOTE_USER@$REMOTE_HOST << EOF
   docker rmi mytomcat_image:latest  
   docker build -t mytomcat_image $(basename $DOCKERFILE_PATH)
   docker images -a
-  mkdir hi
   sudo -u ubuntu docker run -d --name tomcat-container -p 8090:8080 mytomcat_image  $(basename $DOCKERFILE_PATH)
 EOF
 
