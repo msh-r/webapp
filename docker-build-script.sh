@@ -12,8 +12,8 @@ sudo -u ubuntu ssh -i /home/ubuntu/.ssh/id_rsa $REMOTE_USER@$REMOTE_HOST << EOF
   echo "Connected to remote instance."
   cd $(dirname $DOCKERFILE_PATH)
   docker rmi tomcat_image:latest  
-  docker build -t tomcat_image $(basename $DOCKERFILE_PATH)
+  docker build -t mytomcat_image $(basename $DOCKERFILE_PATH)
   docker images -a
-  docker run -d --name tomcat-container -p 8081:8090 tomcat-image:latest
+  docker run -d --name tomcat-container -p 8081:8090 mytomcat-image:latest
 EOF
 
