@@ -10,7 +10,8 @@ sudo -u ubuntu ssh -i /home/ubuntu/.ssh/id_rsa $REMOTE_USER@$REMOTE_HOST << EOF
   docker rmi $(docker images -q)  
   docker stop $(docker ps -aq) && docker rm $(docker ps -aq) 
   docker build -t tomcat_image $(basename $DOCKERFILE_PATH)
+  cd $(dirname $DOCKERFILE_PATH/)
   pwd
-  ls -ltr
+  ls
 EOF
 
