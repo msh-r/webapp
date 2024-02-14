@@ -11,9 +11,11 @@ DOCKERFILE_PATH="/home/ubuntu/webapp"  # Path to your Dockerfile on the remote E
 sudo -u ubuntu ssh -i /home/ubuntu/.ssh/id_rsa $REMOTE_USER@$REMOTE_HOST << EOF
   echo "Connected to remote instance."
   cd $(dirname $DOCKERFILE_PATH)
+  docker stop tomcat-container && docker rm tomcat-container
   docker rmi mytomcat  
   docker build -t mytomcat $(basename $DOCKERFILE_PATH)
   docker images -a
   sudo -u ubuntu docker run -d --name tomcat-container -p 8080:8080 mytomcat
+  docker ps -a
 EOF
 
