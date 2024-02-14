@@ -1,5 +1,6 @@
 
 # Install prerequisites
+FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y openjdk-11-jre-headless && \
     apt-get clean
