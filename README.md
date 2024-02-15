@@ -1,9 +1,5 @@
-This is a sample Web Application to use during Continuous Integration demos.
+This is a  Simple Devops Project to demonstrate the CI/CD process of software development life cycle.
 
-#Build Instruction
-#checking the webhookk
-#Deploy instruction
-Deploy ```target/WebAPP.war``` on Tomcat
-#TODO
-Add instruction to deploy to ElasticBeanstalk
-#Permission.IAM
+#The codes are added here of the project.
+
+
