@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+    stages {
+        stage('git-clone') {
+            steps {
+                sh 'cd /var/lib/jenkins/workspace/DevOps-Project-1'
+                sh 'sudo rm -rf *'
+                sh 'ls -ltra'
+                git 'https://github.com/msh-r/webapp.git'
+                sh 'ls -ltra'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'echo Cleaning-the-previous-build'
+                sh 'mvn clean'
+                sh 'ls -ltra'
+                sh 'echo Building-the-Web-Application'
+                sh 'mvn package -f pom.xml'
+                sh 'pwd'
+                sh 'ls -ltra'
+            }
+        }
+        stage('Connect-to-Remote'){
+            steps {
+                /*script {
+                // Access variables
+                 def user = "ubuntu"
+                 def host = "34.229.151.248"
+                // Print the message
+                 echo "${user}, ${host}!"*/
+                //declaring variables
+                //host-address=ubuntu@3.89.27.8 //remote host address of tomcat server
+                //war-location=/var/lib/jenkins/workspace/DevOps-Project-1/target/WebApp.war file location
+                //sh 'whoami'
+                //sh 'eval $(ssh-agent)'
+                //sh 'ssh-add /home/jenkins/.ssh/id_rsa'
+                //sh 'echo success'
+                //sh 'export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)'
+                sh 'sudo -u ubuntu ssh -i /home/ubuntu/.ssh/id_rsa  ubuntu@34.229.151.248'
+                //sh 'sudo -u ubuntu ssh -fN -M -S /tmp/ssh_socket -i /home/ubuntu/.ssh/id_rsa ${user}@${host}' //command for persistent remote ssh connection
+                //sh 'sudo -u ubuntu ssh -S /tmp/ssh_socket ubuntu@3.89.27.8'
+                sh ' echo "Successfully-Connected"'
+            }
+        }
+        stage ('Deploy'){
+            steps{
+                sh 'sudo -u ubuntu ssh  ubuntu@34.229.151.248 "rm -rf /home/ubuntu/webapp/*"'
+                sh 'sudo -u ubuntu ssh ubuntu@34.229.151.248 "rm -rf  /home/ubuntu/webapp/*"'
+                sh 'sudo -u ubuntu ssh ubuntu@34.229.151.248 "ls -ltr /home/ubuntu/webapp/" '
+                sh 'sudo -u ubuntu scp -r /var/lib/jenkins/workspace/DevOps-Project-1/target/WebAPP.war ubuntu@34.229.151.248:/home/ubuntu/webapp'
+                sh 'sudo -u ubuntu scp -r /var/lib/jenkins/workspace/DevOps-Project-1/Dockerfile ubuntu@34.229.151.248:/home/ubuntu/webapp'
+                sh 'sudo -u ubuntu ssh ubuntu@34.229.151.248 "ls -ltr /home/ubuntu/webapp/" ' 
+                sh 'echo "File Transfer Successful"'
+                sh 'echo starting Docker build Process'
+                sh 'chmod +x docker-build-script.sh'
+                sh './docker-build-script.sh'
+                sh 'echo Project Successful'
+            }
+        }         
+    }
+}
