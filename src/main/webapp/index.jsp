@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Your Website</title>
+    <title>Welcome to My Website</title>
     <style>
         /* Basic styling for the layout */
         body {
@@ -44,13 +44,18 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Website</h1>
+        <h1>Welcome to DevOps-Project-1</h1>
     </header>
     <div class="container">
         <div class="content">
+            <!-- Add image here -->
+            <div class="image">
+                <img src="pic.jpg" alt="DevOps-Project-1" style="max-width: 100%;">
+            </div>
             <h2>About Us</h2>
-            <p>This is a simple website created using JSP.</p>
-            <p>You can customize this page further to suit your needs.</p>
+            <p>This is a simple website created using JSP.This website is deployed to Tomcat server using a Jenkins pipeline triggered by webhook from Github repository</p>
+            <p>The tools were used for this project are : GitHub, Jenkins, Maven, Docker, Tomcat , CI/CD , AWS: 2X Ec-2 instance.This website is live now</p>
+            <p>I will add the project to this URL:https://medium.com/@ramimhossain67 as a showcase with screenshots. Happy Learning!! </p>
         </div>
     </div>
     <footer>
