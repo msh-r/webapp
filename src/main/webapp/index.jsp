@@ -53,8 +53,8 @@
                 <img src="pic.jpg" alt="DevOps-Project-1" style="max-width: 35%;">
             </div>
             <h2>About Me</h2>
-            <p>Hi , This is Mohammad Shakhawat Hossain.I have made a simple website using JSP.This website is deployed to Tomcat server using a Jenkins pipeline triggered by webhook from Github repository.</p>
-            <p>The tools were used for this project are : GitHub, Jenkins, Maven, Docker, Tomcat , CI/CD , AWS: 2X Ec-2 instance.This website is live now</p>
+            <p>Hi Everyone!, This is Mohammad Shakhawat Hossain.I have made a simple website using JSP.This website is deployed to Tomcat server using a Jenkins pipeline triggered by webhook from Github repository.</p>
+            <p>The tools were used for this project are : GitHub, Jenkins, Maven, Docker, Tomcat , CI/CD , AWS: Two EC-2 instances(one for Jenkins and one for Tomcat).This website is live now!!</p>
             <p>I will add the project to this URL:https://medium.com/@ramimhossain67 as a showcase with screenshots. Happy Learning!! </p>
         </div>
     </div>
