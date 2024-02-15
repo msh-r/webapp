@@ -16,6 +16,19 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>java-hello-world</finalName>
-  </build>
+       <finalName>java-hello-world</finalName>
+      <plugins>
+         <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>3.2.2</version>
+                  <configuration>
+                      <!-- WAR file name -->
+                      <warName>WebAPP</warName>
+                      <!-- Webapp directory -->
+                      <webappDirectory>src/main/webapp</webappDirectory>
+                  </configuration>
+         </plugin>
+      </plugins>
+ </build>
 </project>
