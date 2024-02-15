@@ -50,7 +50,7 @@
         <div class="content">
             <!-- Add image here -->
             <div class="image">
-                <img src="pic.jpg" alt="DevOps-Project-1" style="max-width: 100%;">
+                <img src="pic.jpg" alt="DevOps-Project-1" style="max-width: 60%;">
             </div>
             <h2>About Us</h2>
             <p>This is a simple website created using JSP.This website is deployed to Tomcat server using a Jenkins pipeline triggered by webhook from Github repository</p>
